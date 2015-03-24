@@ -1,0 +1,61 @@
+{namespace com.scheerer.stash.merge.checks.config}
+
+/**
+ * @param config
+ */
+{template .formContents}
+    {call aui.form.textField}
+        {param id: 'bypassKeyword' /}
+        {param value: $config ? $config['bypassKeyword'] : '[FASTTRACK]' /}
+        {param labelContent: 'Bypass Keyword' /}
+        {param descriptionText: 'Keyword to indicate merge rules need to be bypassed. (eg. [FASTTRACK] Would apply to a pull request title such as "[FASTTRACK] Some pull request title.")' /}
+        {param extraClasses: 'long' /}
+    {/call}
+    {call aui.form.checkboxField}
+        {param legendContent: '' /}
+        {param fields: [
+            [
+                'id': 'requireSuccessfulBuilds',
+                'labelText': 'Only successful source builds?',
+                'descriptionText': 'Require all builds for source branch to be successful before merging',
+                'isChecked': $config ? $config['requireSuccessfulBuilds'] : false
+            ],
+        ]/}
+    {/call}
+    {call aui.form.checkboxField}
+        {param legendContent: '' /}
+        {param fields: [
+            [
+                'id': 'requireTargetBranchBuildsToBeSuccessful',
+                'labelText': 'Only successful target builds?',
+                'descriptionText': 'Require all builds on target branch to be successful before merging',
+                'isChecked': $config ? $config['requireTargetBranchBuildsToBeSuccessful'] : false
+            ],
+        ]/}
+    {/call}
+    {call aui.form.checkboxField}
+        {param legendContent: '' /}
+        {param fields: [
+            [
+                'id': 'mustBeMarkedDone',
+                'labelText': 'Pull Request title must be marked [DONE]',
+                'descriptionText': 'Require pull request title to be include the text [DONE]. (eg. "[DONE] Some pull request title.")',
+                'isChecked': $config ? $config['mustBeMarkedDone'] : false
+            ],
+        ]/}
+    {/call}
+    {call aui.form.textField}
+        {param id: 'hipChatApiToken' /}
+        {param value: $config ? $config['hipChatApiToken'] : '' /}
+        {param labelContent: 'HipChat API Token' /}
+        {param descriptionText: 'API Token generated to send notifications to the room specified.' /}
+        {param extraClasses: 'long' /}
+    {/call}
+    {call aui.form.textField}
+        {param id: 'hipChatRoomId' /}
+        {param value: $config ? $config['hipChatRoomId'] : '' /}
+        {param labelContent: 'HipChat Room' /}
+        {param descriptionText: 'The name of the room (or id) to post messages for each pull request merged with bypass flag.' /}
+        {param extraClasses: 'long' /}
+    {/call}
+{/template}
