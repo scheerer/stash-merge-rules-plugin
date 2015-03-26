@@ -4,7 +4,7 @@
 
 ## License
 
-Released under the [MIT License](http://www.opensource.org/licenses/MIT).
+Released under the [GPLv3](http://opensource.org/licenses/GPL-3.0).
 
 ## Atlassian Stash Extra Merge Rules
 
