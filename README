@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/scheerer/stash-merge-rules-plugin.svg?branch=master)](https://travis-ci.org/scheerer/stash-merge-rules-plugin)
+
 An Atlassian Stash plugin for preventing pull requests from being merged without meeting some criteria.
 
 - Optionally checks the build status for source and/or target branches. Only allowing branches with a successful build for the latest commit.
