@@ -1,4 +1,12 @@
+## Code Status
+
 [![Build Status](https://travis-ci.org/scheerer/stash-merge-rules-plugin.svg?branch=master)](https://travis-ci.org/scheerer/stash-merge-rules-plugin)
+
+## License
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT).
+
+## Atlassian Stash Extra Merge Rules
 
 An Atlassian Stash plugin for preventing pull requests from being merged without meeting some criteria.
 
